@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CardProduct from '../home/CardProduct'
+import './styles/similarProducts.css'
 
 const SimilarProducts = ({product}) => {
 
@@ -32,9 +33,9 @@ const SimilarProducts = ({product}) => {
   }, [idCategory])
 
   return (
-    <section>
-      <h2>Similar Products:</h2>
-      <div>
+    <section className='similar_products'>
+      <h2 className='similar_products_title'>Similar Products:</h2>
+      <div className='similar_products_container'>
         {
           similarCategory?.map(similarProduct => {
             if (product.id !== similarProduct.id){
