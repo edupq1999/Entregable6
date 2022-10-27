@@ -30,8 +30,17 @@
     justify-content: space-between;
 }
 .shop_card-price{
-
+    font-size: 20px;
 }
 .shop_card-button{
-
+    background-color: var(--orange);
+    fill: var(--white);
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+}
+.shop_card-button:hover{
+    transition: 0.5s;
+    background-color: var(--blue);
+    fill: var(--skyblue);
 }

@@ -7,6 +7,7 @@
     position: fixed;
     height: 60px;
     background-color: var(--orange);
+    z-index: 1;
 }
 .header_nav ul{
     display: flex;
