@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import './styles/loginScreen.css'
 
 const LoginScreen = () => {
 
@@ -31,22 +32,22 @@ const LoginScreen = () => {
     }
 
     if (isLogged) {
-      return  <div>
-                <h1>User is logged ✅</h1>
-                <button onClick={handleLogout}>Logout</button>
+      return  <div className='login_form '>
+                <label className='login_form_label'>User is logged ✅</label>
+                <button className='login_form_button' onClick={handleLogout}>Logout</button>
               </div>
     } else {
       return (
-        <form onSubmit={handleSubmit(submit)}>
-            <div>
-            <label htmlFor="email">Email</label>
-            <input type="text" id='email' placeholder='Enter email' {...register('email')}/>
+        <form onSubmit={handleSubmit(submit)} className='login_form'>
+            <div className='login_form_container'>
+            <label className='login_form_label' htmlFor="email">Email</label>
+            <input className='login_form_input' type="text" id='email' placeholder='Enter email' {...register('email')}/>
             </div>
-            <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" id='password' placeholder='password' {...register('password')}/>
+            <div className='login_form_container'>
+            <label className='login_form_label' htmlFor="password">Password</label>
+            <input className='login_form_input' type="password" id='password' placeholder='password' {...register('password')}/>
             </div>
-            <button>Login</button>
+            <button className='login_form_button'>Login</button>
         </form>
       )
     }
