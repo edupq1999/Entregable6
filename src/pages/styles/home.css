@@ -13,8 +13,10 @@
     height: 100%;
 }
 .products{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
     padding: 60px 0 0 20%;
 }

@@ -1,0 +1,37 @@
+.shop_card{
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    border: black solid 1px;
+    box-shadow: #0000009d 0 0 8px 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+.shop_card:hover{
+    transition: 0.5s;
+    scale: 1.01;
+}
+.shop_card-header{
+    display: grid;
+    place-items: center;
+    gap: 1em;
+}
+.shop_card-img{
+    height: 150px;
+}
+.shop_card-title{
+    text-align: center;
+}
+.shop_card-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.shop_card-price{
+
+}
+.shop_card-button{
+
+}
