@@ -23,10 +23,12 @@ const Home = () => {
     }, [])
 
   return (
-    <main>
-        <FilterCategory />
-        <FilterPrice setfilterByPrice = {setfilterByPrice} />
-        <OrderByPrice />
+    <main className='home'>
+        <div className='home_filters'>
+            <FilterCategory />
+            <FilterPrice setfilterByPrice = {setfilterByPrice} />
+            <OrderByPrice />
+        </div>
         {
             products?.map(product => (
                 <CardProduct 

@@ -1,3 +1,9 @@
+:root{
+    --orange: #FF731D;
+    --white: #FFF7E9;
+    --skyblue: #5F9DF7;
+    --blue: #1746A2;
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,10 +14,4 @@ a{
 }
 li{
     list-style: none;
-}
-:root{
-    --orange: #FF731D;
-    --white: #FFF7E9;
-    --skyblue: #5F9DF7;
-    --blue: #1746A2;
 }
