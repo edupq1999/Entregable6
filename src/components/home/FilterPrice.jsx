@@ -2,10 +2,10 @@ import React from 'react'
 
 const FilterPrice = ({setFilterByPrice}) => {
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        const from = +e.target.from.value
-        const to = +e.target.to.value
+    const handleSubmit = event => {
+        event.preventDefault()
+        const from = +event.target.from.value
+        const to = +event.target.to.value
         const obj = {
             from: from,
             to: to !== 0 ? to : Infinity

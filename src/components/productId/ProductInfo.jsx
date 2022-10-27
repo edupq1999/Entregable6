@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import getConfig from '../../utils/getConfig'
 import './styles/productInfo.css'
 
 const ProductInfo = ({product}) => {
@@ -27,6 +29,17 @@ const ProductInfo = ({product}) => {
             setImg(img+1)
         }
     }
+
+    const handleBuy = () => {
+        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+        const data = {
+            id: product.id,
+            quantity: counter
+        }
+        axios.post(URL, data, getConfig())
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
   return (
     <div className='product-info'>
         <div className='product-info-container'>
@@ -42,7 +55,7 @@ const ProductInfo = ({product}) => {
         <p className='product_info-description'>{product?.description}</p>
             <div className='product_info-price-container'>
                 <h3 className='product_info-price-label'>Price</h3>
-                <span className='product_info-price-number'>$ {product?.price}</span>
+                <span className='product_info-price-number'>$ {product?.price*counter}</span>
             </div>
             <div className='product_info-quatity-container'>
                 <h3 className='product_info-quatity-label'>Quantity</h3>
@@ -52,7 +65,13 @@ const ProductInfo = ({product}) => {
                     <div onClick={handlePlus} className='counter_plus cursor'>+</div>
                 </div>
             </div>
-            <button className='product_info-btn'>Add to Cart <i className="product_info-icon fa-solid fa-cart-shopping"></i></button>
+            <button 
+                onClick={handleBuy}
+                className='product_info-btn'
+            >
+                Add to Cart 
+                <i className="product_info-icon fa-solid fa-cart-shopping"></i>
+            </button>
         </section>
     </div>
   )
