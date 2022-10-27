@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import ProductInfo from '../components/productId/ProductInfo'
 import SimilarProducts from '../components/productId/SimilarProducts'
+import './styles/productId.css'
 
 const ProductId = () => {
 
@@ -18,7 +19,7 @@ const ProductId = () => {
   }, [id])
 
   return (
-    <div>
+    <div className='productId_container'>
         <ProductInfo product = {product}/>
         <SimilarProducts product = {product}/>
     </div>
