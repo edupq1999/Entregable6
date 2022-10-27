@@ -36,6 +36,11 @@ const LoginScreen = () => {
     } else {
       return (
         <form onSubmit={handleSubmit(submit)} className='login_form'>
+            <div className='acount'>
+              <h2>Use this acount:</h2>
+              <p>edupq1999@gmail.com</p>
+              <p>pass1234</p>
+            </div>
             <div className='login_form_container'>
             <label className='login_form_label' htmlFor="email">Email</label>
             <input className='login_form_input' type="text" id='email' placeholder='Enter email' {...register('email')}/>

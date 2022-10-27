@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CartProduct from '../components/cart/CartProduct'
@@ -10,12 +10,23 @@ import './styles/cart.css'
 const Cart = () => {
 
   const cart = useSelector(state => state.cart)
+  const [total, setTotal] = useState(0)
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getAllProductsCart())
   },[])
+
+  useEffect(() => {
+    if(cart){
+      const result = cart.products.reduce((acc, cv) => {
+        return acc + cv.price * cv.productsInCart.quantity
+      }, 0)
+      setTotal(result)
+    }
+  }, [cart])
+  
 
   const handlePurchase = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
@@ -30,6 +41,7 @@ const Cart = () => {
       .then(res => {
         console.log(res.data)
         dispatch(setCartGlobal(null))
+        setTotal(0)
       })
       .catch(err => console.log(err))
   }
@@ -47,6 +59,7 @@ const Cart = () => {
           ))
         }
       </div>
+      <h2>Total: $ {total}</h2>
       <button className='cart_buy' onClick={handlePurchase}>Buy Now</button>
     </div>
   )
