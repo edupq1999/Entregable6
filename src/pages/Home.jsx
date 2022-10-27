@@ -29,6 +29,7 @@ const Home = () => {
             <FilterPrice setfilterByPrice = {setfilterByPrice} />
             <OrderByPrice />
         </div>
+        <div className='products'>
         {
             products?.map(product => (
                 <CardProduct 
@@ -37,6 +38,7 @@ const Home = () => {
                 />
             ))
         }
+        </div>
         
     </main>
   )
