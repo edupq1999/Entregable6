@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+:root{
+    --orange: #FF731D;
+    --white: #FFF7E9;
+    --skyblue: #5F9DF7;
+    --blue: #1746A2;
+}

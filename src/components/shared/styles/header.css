@@ -1,0 +1,28 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    height: 60px;
+    background-color: var(--orange);
+}
+.header_nav ul{
+    display: flex;
+}
+.header_title a{
+    color: var(--white);
+    background-color: var(--skyblue);
+    padding: 5px;
+    border-radius: 8px;
+}
+.header_item{
+    margin: 0 10px;
+    background-color: var(--blue);
+    padding: 8px;
+    border-radius: 8px;
+}
+.header_link{
+    color: var(--white);
+}

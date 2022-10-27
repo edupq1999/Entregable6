@@ -5,6 +5,7 @@ import FilterCategory from '../components/home/FilterCategory'
 import FilterPrice from '../components/home/FilterPrice'
 import OrderByPrice from '../components/home/OrderByPrice'
 import { getAllProducts } from '../store/slices/products.slice'
+import './styles/home.css'
 
 const Home = () => {
     
