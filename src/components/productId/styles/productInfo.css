@@ -51,4 +51,28 @@
 }
 .cursor{
     cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 50%;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--orange);
+}
+.cursor:hover{
+    transition: 0.5s;
+    background-color: var(--blue);
+    color: var(--skyblue);
+    fill: var(--skyblue);
+}
+.product_info-btn{
+    width: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--orange);
+    border: 1px solid black;
+    color: var(--white);
+}
+.product_info-btn:hover{
+    transition: 0.5s;
+    background-color: var(--blue);
+    color: var(--skyblue);
 }
