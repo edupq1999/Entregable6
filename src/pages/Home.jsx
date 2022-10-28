@@ -12,7 +12,7 @@ const Home = () => {
     
     const [inputText, setInputText] = useState('')
     const [filterByText, setFilterByText] = useState()
-    const [filterByPrice, setfilterByPrice] = useState({
+    const [filterByPrice, setFilterByPrice] = useState({
         from: 0,
         to: Infinity
     })
@@ -34,6 +34,9 @@ const Home = () => {
       }
     }, [inputText, products])
     
+    const callBackFilterPrice = product => {
+      return +product.price >= filterByPrice.from && +product.price <= filterByPrice.to
+    }
 
   return (
     <main className='home'>
@@ -43,12 +46,12 @@ const Home = () => {
                 setInputText = {setInputText}
             />
             <FilterCategory />
-            <FilterPrice setfilterByPrice = {setfilterByPrice} />
+            <FilterPrice setFilterByPrice = {setFilterByPrice} />
             <OrderByPrice />
         </div>
         <div className='products'>
         {   
-            filterByText?.map(product => (
+            filterByText?.filter(callBackFilterPrice).map(product => (
                 <CardProduct 
                     key={product.id}
                     product={product}
