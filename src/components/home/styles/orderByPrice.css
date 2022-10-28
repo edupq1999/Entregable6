@@ -1,0 +1,18 @@
+.order_Price{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.order_Price button{
+    width: max-content;
+    padding: 10px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 8px;
+    border: 1px black solid;
+}
+.order_Price button:hover{
+    transition: 0.5s;
+    background-color: var(--blue);
+    color: var(--skyblue);
+}

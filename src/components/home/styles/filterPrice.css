@@ -1,0 +1,21 @@
+.filter_price{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.filter_from_to label{
+    margin: 0 5px;
+}
+.filter_button{
+    width: max-content;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px black solid;
+    background-color: var(--orange);
+    color: var(--white);
+}
+.filter_button:hover{
+    transition: 0.5s;
+    background-color: var(--blue);
+    color: var(--skyblue);
+}

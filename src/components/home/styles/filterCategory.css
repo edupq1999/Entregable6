@@ -1,0 +1,8 @@
+.filter_category{
+    display: flex;
+    flex-direction: column;
+}
+.filter_category_option{
+    margin: 5px 0;
+    cursor: pointer;
+}
