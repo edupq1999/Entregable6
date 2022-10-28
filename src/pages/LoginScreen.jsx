@@ -1,17 +1,24 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import './styles/loginScreen.css'
 
 const LoginScreen = () => {
 
+    const navigate = useNavigate()
     const {handleSubmit, reset, register} = useForm()
     const [isLogged, setIsLogged] = useState(false)
 
     const submit = data => {
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users/login'
         axios.post(URL, data)
-            .then(res => localStorage.setItem('token', res.data.data.token))
+            .then(res => {
+              localStorage.setItem('token', res.data.data.token)
+              if (res.data.status === 'success'){
+                navigate('/')
+              }
+            })
             .catch(err => console.log(err))
     }
 
