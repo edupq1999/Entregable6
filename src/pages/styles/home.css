@@ -5,7 +5,7 @@
 .home_filters{
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: max-content;
     padding: 10px;
     gap: 1em;
     position: fixed;
@@ -14,9 +14,9 @@
 }
 .products{
     width: 100%;
+    padding: 40px 0 40px 240px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2em;
-    padding: 60px 0 0 20%;
 }

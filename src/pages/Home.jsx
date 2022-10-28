@@ -3,18 +3,21 @@ import { useDispatch, useSelector } from 'react-redux'
 import CardProduct from '../components/home/CardProduct'
 import FilterCategory from '../components/home/FilterCategory'
 import FilterPrice from '../components/home/FilterPrice'
+import InputSearch from '../components/home/InputSearch'
 import OrderByPrice from '../components/home/OrderByPrice'
 import { getAllProducts } from '../store/slices/products.slice'
 import './styles/home.css'
 
 const Home = () => {
     
-    const products = useSelector(state => state.products)
+    const [inputText, setInputText] = useState('')
     const [filterByText, setFilterByText] = useState()
     const [filterByPrice, setfilterByPrice] = useState({
         from: 0,
         to: Infinity
     })
+
+    const products = useSelector(state => state.products)
 
     const dispatch = useDispatch()
 
@@ -22,16 +25,30 @@ const Home = () => {
         dispatch(getAllProducts())
     }, [])
 
+    useEffect(() => {
+      if(inputText !== ''){
+        const cb = product => product.title.toLowerCase().includes(inputText.toLowerCase().trim())
+        setFilterByText(products.filter(cb))
+      }else {
+        setFilterByText(products)
+      }
+    }, [inputText, products])
+    
+
   return (
     <main className='home'>
         <div className='home_filters'>
+            <InputSearch 
+                inputText = {inputText}
+                setInputText = {setInputText}
+            />
             <FilterCategory />
             <FilterPrice setfilterByPrice = {setfilterByPrice} />
             <OrderByPrice />
         </div>
         <div className='products'>
-        {
-            products?.map(product => (
+        {   
+            filterByText?.map(product => (
                 <CardProduct 
                     key={product.id}
                     product={product}
